@@ -1,0 +1,19 @@
+---
+# tasks file for roles/pull-container
+  - name: Update Docker
+    apt:
+      name: docker
+      state: latest
+      update_cache: yes
+
+  - name: Login to DockerHub
+    docker_login:
+      username: docker
+      password: rekcod
+      email: docker@docker.io
+
+  - name: pull an image
+    docker_image:
+      name: pacur/centos-7
+
+  - name: start
