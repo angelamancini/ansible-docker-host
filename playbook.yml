@@ -1,0 +1,11 @@
+---
+  # This playbook creates the infrastructure for the NA UAT Tracks environment
+  - name:
+    hosts: localhost
+    connection: local
+    gather_facts: true
+    vars_files:
+      - 'vault.yml'
+      - 'vars.yml'
+    roles:
+    tasks:
